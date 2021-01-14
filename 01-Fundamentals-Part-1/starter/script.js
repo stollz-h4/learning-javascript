@@ -289,6 +289,7 @@ for that as well.
 a team only wins if has a higher score than the other team, and a score of at 
 least 100 points at the same time. HINT: Use a logical operator to test for minimum score,
 as well as multiple else-if blocks.
+
 4. BONUS 2: Minimum score also applies to a draw! So a draw only happens when
 both teams have the same score and both have a score greater or equal to 100.
 Otherwise, no team wins.
@@ -302,22 +303,114 @@ Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123.
 TEST DATA BONUS 2:
 Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 */
-
+/*
 // calculate average score for teams
-const scoreDolphins = (100 + 108 + 102) / 3;
-const scoreKoalas = (100 + 108 + 102) / 3;
+const scoreDolphins = (100 + 108 + 50) / 3;
+const scoreKoalas = (100 + 108 + 50) / 3;
 
 // determine winner
 if(scoreDolphins > 100 || scoreKoalas > 100) {
 	if(scoreDolphins > scoreKoalas) {
-		console.log(`The Dolphins won! Dolphins ${scoreDolphins} : Koalas ${scoreKoalas}`);
+		console.log(`The Dolphins won! Dolphins ${scoreDolphins} : Koalas ${scoreKoalas} 🏆`);
 	} else if (scoreKoalas > scoreDolphins) {
-		console.log(`The Koalas won! Koalas ${scoreKoalas} : Dolphins ${scoreDolphins}`);
+		console.log(`The Koalas won! Koalas ${scoreKoalas} : Dolphins ${scoreDolphins} 🏆`);
 	} else if (scoreKoalas === scoreDolphins) {
-		console.log(`The match ended in a draw`);
+		console.log(`The match ended in a draw 🌓, ${scoreDolphins} : ${scoreKoalas}`);
 	} else {
 		console.log(`Something is wrong`);
 	}
 } else {
-	console.log(`Neither team won at least a 100 points, which is the minimum`);
+	console.log(`Neither team has at least 100 points, which is the minimum`);
 }
+*/
+/*
+const day = 'thursday';
+
+// switch(day) {
+// 	case 'monday':
+// 		console.log(`Plan course structure`);
+// 		console.log(`Go to coding meetup`);
+// 		break;
+// 	case 'tuesday':
+// 		console.log(`Some more stupid shit`);
+// 		break;
+// 	case 'wednesday':
+// 	case 'thursday':
+// 		console.log(`Write code`);
+// 		break;
+// 	case 'friday':
+// 		console.log(`Record videos`);
+// 		break;
+// 	case 'saturday':
+// 	case 'sunday':
+// 		console.log(`Enjoy the weekend`);
+// 		break;
+// 	default:
+// 		console.log(`The default message`);
+// }
+
+if (day === 'monday') {
+	console.log(`Plan course structure`);
+	console.log(`Go to coding meetup`);
+} else if (day === 'tuesday') {
+	console.log(`Some more stupid shit`);
+} else if (day === 'wednesday' || day === 'thursday') {
+	console.log(`Write code`);
+} else if (day === 'friday') {
+	console.log(`Record videos`);
+} else if (day === 'saturday' || day === 'sunday') {
+	console.log(`Enjoy the weekend`);
+} else {
+	console.log(`The default message`);
+}
+*/
+
+/*
+const age = 17;
+// age >= 18 ? console.log('I like drinking wine 🍷') : console.log(`You're a bit young to drink alcohol`);
+
+// const drink = age >= 18 ? 'wine 🍷' : 'water🚰';
+// console.log(drink);
+
+// let drink2;
+// if (age >= 18) {
+// 	drink2 = 'wine 🍷';
+// } else {
+// 	drink2 = 'water🚰';
+// }
+// console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water🚰'}`);
+*/
+
+// Coding challenge 4
+/*
+Steven wants to build a very simple tip calculator for whenever he goes eating in a restaurant.
+In his country, it's usual to tip 15% if the bill value is between 50 and 300. If the value is different, the tip is 20%.
+
+1. Your task is to calculate the tip, depending on the bill value. Create a variable called 'tip' for this.
+It's not allowed to use an if/else statement (If it's easier for you, you can start with and if/else statement, and then try
+to convert it to a ternary operator).
+
+2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip).
+
+TEST DATA: Test for bill values 275, 40 and 430.
+*/
+
+// let tip;
+// let bill = 301;
+
+// if(bill < 50 && bill > 300) {
+// 	tip = .20;
+// } else {
+// 	tip = .15;
+// }
+
+// let check = bill + tip * bill;
+
+// console.log(check);
+
+const bill = 40;
+let tip = (bill < 50 || bill > 300) ? .2 : .15;
+let check = bill + bill * tip;
+console.log(`The bill = ${bill}, the tip = ${tip} and the total check = ${check}`);
