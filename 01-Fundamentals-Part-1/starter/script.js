@@ -511,7 +511,7 @@ const yearsUntilRetirement = function (firstName, birthYear) {
 console.log(yearsUntilRetirement('Stojan', 1950));
 */
 
-// Coding challenge 2.1
+// Coding challenge 3.1
 /*
 Back to the two gymnastics teams, the Dolphins and the Koalas. There is a new gymnastics discipline,
 which works differently. 
@@ -531,18 +531,105 @@ TEST DATA 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49.
 TEST DATA 2: Dolphins score 85, 54 an 41. Koalas score 23, 34 and 27.
 */
 
+/*
 const calcAverage = (a, b, c) => (a + b + c) / 3;
-const avgDolphins = calcAverage(85, 54, 41);
-const avgKoalas = calcAverage(23, 34, 27);
+const scoreDolphins = calcAverage(85, 54, 41);
+const scoreKoalas = calcAverage(23, 34, 27);
 
 function checkWinner(avgDolphins, avgKoalas) {
-	if (avgDolphins > avgKoalas * 2) {
-		return `Dolphins win! (${avgDolphins} vs ${avgKoalas})`;
-	} else if (avgKoalas > avgDolphins * 2) {
-		return `Koalas win! (${avgKoalas} vs ${avgDolphins})`;	
-	} else {
-		return `There is no winnner at this moment`;
+	let winner = `There is no winner at this point`;
+	if (avgDolphins >= avgKoalas * 2) {
+		winner = `Dolphins win! (${avgDolphins} vs ${avgKoalas})`;
+	} else if (avgKoalas >= avgDolphins * 2) {
+		winner = `Koalas win! (${avgKoalas} vs ${avgDolphins})`;	
 	}
+	return winner;
 }
 
-console.log(checkWinner(avgDolphins, avgKoalas));
+console.log(checkWinner(scoreDolphins, scoreKoalas));
+*/
+
+// const friends = ['Michael', 'Steven', 'Peter'];
+// console.log(friends);
+// console.log(friends[0]);
+
+// const years = new Array(1991, 1994, 2008, 2021);
+
+// console.log(friends.length);
+
+// // targetting the last element in an array
+// console.log(friends[friends.length - 1]);
+
+
+// friends[2] = 'Jason';
+// console.log(friends);
+
+// const firstName = 'Stojan';
+// const stojan = [firstName, 'Mihajlovski', 2021 - 1985, 'web developer', friends];
+
+/*
+// Exercise
+const calcAge = function(birthYear) {
+	return 2021 - birthYear;
+}
+
+const years = [1985, 1991, 2003, 2005];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+console.log(ages);
+*/
+
+/*
+ const friends = ['Michael', 'Gabriel'];
+ const newLength = friends.push('Tyrael');
+ console.log(friends);
+ console.log(newLength);  
+ friends.unshift('Imperius');
+ console.log(friends);
+
+ if (friends.includes('Tyrael')) {
+ 	console.log('You are a Diablo fan arent you?');
+ }
+ */
+
+// Coding challenge 3.2
+/*
+Steven is still building his tip calculator, using the same rules as before,
+tip 15% of the bill if the bill value is between 50 and 300, and if the value is different,
+the tip is 20%.
+
+1. Write a function calcTip that takes any bill value as an input and returns the corresponding tip,
+calculated based on the rules above. Use the function type you like the most. Test the function 
+using a bill value of 100. 
+2. And now let's use arrays. So create an array 'bills' containing the test data below.
+3. Create an array 'tips' containing the tip value for each bill, calculated from the function you
+created before. 
+4. BONUS: Create an array 'total' containing the total values, so the bill + tip.
+
+TEST DATA: 125, 555 and 44
+*/
+
+function calcTip(bill) {
+	let tip;
+	if (bill < 50 && bill > 300) {
+		tip = .2;
+	} else {
+		tip = .15;
+	}
+	let theTip = bill * tip;
+	return theTip;
+}
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [[bills[0] + tips [0]], [bills[1] + tips [1]], [bills[2] + tips [2]]]
+
+console.log(bills);
+console.log(tips);
+console.log(totals);
