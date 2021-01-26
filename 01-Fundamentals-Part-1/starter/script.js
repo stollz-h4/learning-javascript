@@ -615,6 +615,7 @@ created before.
 TEST DATA: 125, 555 and 44
 */
 
+/*
 function calcTip(bill) {
 	let tip;
 	if (bill < 50 && bill > 300) {
@@ -633,3 +634,160 @@ const totals = [[bills[0] + tips [0]], [bills[1] + tips [1]], [bills[2] + tips [
 console.log(bills);
 console.log(tips);
 console.log(totals);
+*/
+
+/*
+const jonasArray = [
+	'Jonas',
+	'Schmidt',
+	2021 - 1985,
+	'teacher',
+	['Michael', 'Peter', 'Steven']
+];
+
+const stojan = {
+	firstName: 'Stojan', 
+	lastName: 'Mihajlovski',
+	age: 2021 - 1985,
+	job: 'designer',
+	friends: ['Dusko', 'Ivan', 'Dane']
+}
+
+console.log(stojan.firstName);
+
+const nameKey = 'Name';
+console.log(stojan['first' + nameKey]);
+console.log(stojan['last' + nameKey]);
+
+// const interestedIn = prompt(`What would you like to know about Stojan? Choose between firstName, lastName, job or friends`);
+
+// if (stojan[interestedIn]) {
+// 	console.log(stojan[interestedIn]);	
+// } else {
+// 	console.log(`Please enter some of the offered options`);
+// }
+
+stojan.location = 'Skopje';
+stojan['car'] = 'BMW';
+console.log(stojan);
+
+// Challenge
+// "Jonas has 3 friends, and his best friend is Michael"
+console.log(`${stojan.firstName} has ${stojan.friends.length} friends, and his best friend is ${stojan.friends[0]}`);
+*/
+/*
+const jonas = {
+	firstName: "Jonas",
+	lastName: "Schmedtmann",
+	birthYear: 1991,
+	job: "teacher",
+	friends: ["Michael", "Peter", "Steven"],
+	hasDriversLicence: false,
+
+	// using this
+	// calcAge: function() {
+	// 	return 2021 - this.birthYear;
+	// }
+
+	calcAge: function() {
+		this.age = 2021 - this.birthYear;
+		return this.age;
+	},
+
+	getSummary: function() {
+		return `${this.firstName} is a ${this.calcAge()} year old ${this.job} and he has ${this.hasDriversLicence ? 'a' : 'no'} drivers licence`
+	}
+}
+console.log(jonas.calcAge());
+
+console.log(jonas.age);
+
+// Challenge
+// Jonas is a 30 year old teacher and he has a / no drivers licence
+console.log(jonas.getSummary());
+*/
+
+// let user = new Object(); // object constructor syntax
+// let user = {}; // object literal syntax
+
+// var key = "likes birds";
+/*
+let computer = {
+	mobo: "MSI",
+	cpu: "Ryzen 5600X",
+	ram: "G.Skill 32GB",
+	gpu: "nVidia 3080",
+	hdd: prompt("Enter a hdd brand name" ,"seagate")
+}
+
+let mobo = "cpu";
+console.log(computer[mobo]);
+
+// let hdd = prompt("Enter a hard disk brand you want for your computer", "seagate");
+// computer.hdd = hdd;
+
+console.log(computer);
+*/
+
+// let fruit = "apple";
+// let bag = {
+// 	[fruit + "Computers"]: 5,
+// };
+
+// console.log(bag.appleComputers);
+
+/*
+function makeUser(name, birthYear) {
+	return {
+		name,
+		age: 2021 - birthYear
+	};
+}
+
+let user = makeUser("John", 1985);
+console.log(user);
+*/
+
+// Coding challenge 3.3
+/*
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to 
+implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height) 
+(mass in kg and height in meter)
+
+1. For each of them,create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI(the same method on both objects). Store the BMI value 
+to a property, and also return it from the method
+3. Log to the console who has the higher BMI,together with the full name and the respective BMI. 
+Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+
+TEST DATA: Mark weights 78kg and is 1.69m tall. John weights 92kg and is 1.95m tall.
+*/
+
+// function to be used as a method inside the objects
+function calcBMI() {
+	this.bmi = this.weight / this.height ** 2;
+	return this.bmi;
+}
+
+// mark object
+const mark = {
+	name: "Mark Miller",
+	weight: 78,
+	height: 1.69,
+	bmi: calcBMI
+}
+
+// john object
+const john = {
+	name: "John Smith",
+	weight: 92,
+	height: 1.95,
+	bmi: calcBMI
+}
+
+// invoking the functions so the bmi can be calculated
+mark.bmi();
+john.bmi();
+
+// loging the results
+console.log(mark.bmi > john.bmi ? `Mark's BMI (${mark.bmi}) is higher than John's (${john.bmi})` : `John's BMI (${john.bmi}) is higher than Mark's (${mark.bmi})`);
