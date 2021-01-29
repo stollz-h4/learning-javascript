@@ -763,6 +763,7 @@ Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
 TEST DATA: Mark weights 78kg and is 1.69m tall. John weights 92kg and is 1.95m tall.
 */
 
+/*
 // function to be used as a method inside the objects
 function calcBMI() {
 	this.bmi = this.weight / this.height ** 2;
@@ -791,3 +792,166 @@ john.bmi();
 
 // loging the results
 console.log(mark.bmi > john.bmi ? `Mark's BMI (${mark.bmi}) is higher than John's (${john.bmi})` : `John's BMI (${john.bmi}) is higher than Mark's (${mark.bmi})`);
+*/
+
+// For loop
+// for(let rep = 1; rep <= 10; rep++) {
+// 	console.log(`Lifting weights repetition ${rep} 🏋`);
+// }
+/*
+const jonasArray = [
+	'Jonas',
+	'Schmedtmann',
+	2021 - 1991,
+	'teacher',
+	['Michael', 'Peter', 'Steven'],
+	true
+];
+
+const types = [];
+
+for(let elms = 0; elms < jonasArray.length; elms++) {
+	console.log(jonasArray[elms]);
+
+	// populating the types array 
+	// types[elms] = typeof jonasArray[elms];
+
+	// populating the types array
+	types.push(typeof jonasArray[elms]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for(let i = 0; i < years.length; i++) {
+	ages.push(2021 - years[i]);
+}
+
+console.log(ages);
+
+// continue and break
+console.log("---ONLY STRINGS---");
+for(let elms = 0; elms < jonasArray.length; elms++) {
+	if(typeof jonasArray[elms] !== 'string') continue;
+	console.log(jonasArray[elms], typeof jonasArray[elms]);
+}
+
+console.log("---STOP AT FIRST NUMBER---");
+for(let elms = 0; elms < jonasArray.length; elms++) {
+	if(typeof jonasArray[elms] === 'number') break;
+	console.log(jonasArray[elms], typeof jonasArray[elms]);
+}
+*/
+
+// let stollz = ["stojan", 1985, "designer", "married"];
+
+// // looping backwards
+// for(let i = stollz.length - 1; i >= 0; i--) {
+// 	console.log(stollz[i]);
+// }
+
+// for(let exercise = 1; exercise <= 3; exercise++) {
+// 	console.log(`---- Starting exercise ${exercise} ----`);
+
+// 	for(let rep = 1; rep < 6; rep++) {
+// 		console.log(`Exercise ${exercise}: Weightlifting repetition ${rep}`);
+
+// 		for(let i = 1; i < 3; i++) {
+// 			console.log(`Just trying to see what happens number ${i}`);
+// 		}
+// 	}
+// }
+
+// for(let rep = 1; rep <= 10; rep++) {
+// 	console.log(`Weightlifting repetition ${rep}`);
+// }
+
+/*
+let rep = 1;
+while (rep <= 10) {
+	// console.log(`Weightlifting repetition ${rep}`);
+	rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while(dice !== 6) {
+	console.log(`You rolled a ${dice}`);
+	dice = Math.trunc(Math.random() * 6) + 1;
+	if(dice === 6) {
+		console.log(`You rolled a 6, the loop will now conclude`);
+	}
+}
+
+
+let stollz = ["stojan", "mihajlovski", 1985, "designer"];
+let i = 0;
+
+while(i <= stollz.length - 1) {
+	console.log(stollz[i]);
+	i++;
+}
+*/
+
+// Coding challenge 3.4
+/*
+Let's improve Steven's tip calculator even more, this time using loops.
+
+1. Create an array 'bills' containing all 10 test bill values
+2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate
+tips and total values (bill + tip) for every bill value in the bills array.
+Use a for loop to perform the 10 calculations.
+
+TEST DATA: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52.
+
+4. BONUS: Write a function 'calcAverage' which takes an array called 'arr' as an argument.
+This function calculates the average of all numbers in the given array. This is a DIFFICULT
+challenge, we haven't done this before. Hints:
+	4.1 First, you will need to add up all values in the array. To do the addition, start by
+	creating a variable 'sum' that starts at 0. Then loop over the array using a for loop. In
+	each iteration, add the current value to the 'sum' variable. This way by the end of the loop
+	you will have all the values added together.
+	4.2 To calculate the average divide the sum with the array length.
+	4.3 Call the function with the 'totals' array.
+*/
+
+// we define the arrays
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
+// reuse the function for calculating the tip
+function calcTip(bill) {
+	let tip;
+	if (bill < 50 && bill > 300) {
+		tip = .2;
+	} else {
+		tip = .15;
+	}
+	let theTip = bill * tip;
+	return theTip;
+}
+
+// looping through the bills array
+for(let i = 0; i < bills.length; i++) {
+	tips.push(calcTip(bills[i]));
+	totals.push(tips[i] + bills [i]);
+}
+
+// outputing results
+console.log(tips);
+console.log(totals);
+
+// function for calculating average value from an array of numbers
+function calcAverage(args) {
+	let sum = 0;
+	for(let i = 0; i < args.length; i++) {
+		sum = sum + args[i];
+	}
+	return sum / args.length;
+}
+
+console.log(calcAverage(totals));
