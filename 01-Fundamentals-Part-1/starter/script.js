@@ -918,6 +918,7 @@ challenge, we haven't done this before. Hints:
 	4.3 Call the function with the 'totals' array.
 */
 
+/*
 // we define the arrays
 let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 let tips = [];
@@ -955,3 +956,5 @@ function calcAverage(args) {
 }
 
 console.log(calcAverage(totals));
+*/
+
