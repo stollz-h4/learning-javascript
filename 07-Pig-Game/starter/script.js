@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // selecting elements
 const player0El = document.querySelector(".player--0");
